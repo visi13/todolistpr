@@ -1,0 +1,145 @@
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --accent: #4CAF50;
+  --task-bg: #f9f9f9;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f5f5f5;
+  --accent: #90caf9;
+  --task-bg: #1e1e1e;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  margin-top: 60px;
+  background: var(--task-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 550px;
+  transition: background 0.3s;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+input, select {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--task-bg);
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li span {
+  flex: 1;
+}
+
+li button {
+  margin-left: 10px;
+  font-size: 1rem;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+li button:hover {
+  background-color: #ccc;
+}
+
+.priority-high {
+  border-left: 6px solid red;
+}
+
+.priority-medium {
+  border-left: 6px solid orange;
+}
+
+.priority-low {
+  border-left: 6px solid green;
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 999;
+}
